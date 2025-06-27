@@ -4,7 +4,7 @@ import os
 import time
 
 COOKIES_PATH = "stake_cookies.json"
-USER_DATA_DIR = "/tmp/playwright-stake"
+USER_DATA_DIR = "/tmp/playwright-stake-firefox"
 BONUS_URL = "https://stake.us/settings/api?tab=dailyBonus"
 
 def save_cookies(context):
@@ -12,8 +12,8 @@ def save_cookies(context):
     print("[+] Session cookies saved.")
 
 def load_browser(playwright):
-    print("[*] Launching persistent browser session...")
-    browser = playwright.chromium.launch_persistent_context(
+    print("[*] Launching Firefox persistent session...")
+    browser = playwright.firefox.launch_persistent_context(
         USER_DATA_DIR,
         headless=False,
         slow_mo=50
